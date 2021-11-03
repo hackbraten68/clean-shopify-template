@@ -6,3 +6,12 @@
     <li>{{ name }}</li>
   {% endfor %}
 </ul>
+
+{% assign collection = collections["featured-collection"] %}
+
+{{ collection.title }}
+<ul>
+  {% for product in collection.products %}
+    <li>{{ product.title }} - {{ product.price | money }}</li>
+  {% endfor %}
+</ul>
