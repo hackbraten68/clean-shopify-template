@@ -1,1 +1,16 @@
-{% section 'random-collection' %}
+{% assign array_string = "Sam,David,Andrej,Daniel,Sven,Elijah" %}
+{% assign array = array_string | split: "," %}
+<ul>
+  {% for name in array %}
+    <li>{{ name }}</li>
+  {% endfor %}
+</ul>
+
+{% assign collection = collections["featured-collection"] %}
+
+{{ collection.title }}
+<ul>
+  {% for product in collection.products %}
+    <li>{{ product.title }} - {{ product.price | money }}</li>
+  {% endfor %}
+</ul> 
